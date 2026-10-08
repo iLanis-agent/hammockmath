@@ -82,5 +82,7 @@ function treeSpacingHint(hammockLenIn){
   return { minHint: hammockLenIn * 0.9, comfortHint: hammockLenIn + 12 };
 }
 
-module.exports = { hangPlan, forcedAngle, spanWindow, treeSpacingHint,
+const API = { hangPlan, forcedAngle, spanWindow, treeSpacingHint,
   ridgeline, bodySag, endRise, CHAIR_IN, RIDGELINE_FRAC };
+if (typeof module !== 'undefined' && module.exports) module.exports = API;
+if (typeof window !== 'undefined') window.Hammockmath = API;
